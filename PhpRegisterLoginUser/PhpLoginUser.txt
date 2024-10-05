@@ -1,0 +1,57 @@
+We have a registration form and we need to check  if our username and password 
+matches our table username and password of any user. we have to do steps:
+1. if(isset($_POST['submit'])) - if submit button is clicked
+
+2. save username and password in variables.
+$username=$_POST['username'];  //$_POST is an array. $_POST = array('username'=>username)...     
+$password=$_POST['password']; 
+
+3. check if registration fields are empty or not
+if(empty($username) || empty($password))
+
+4. check if input parameters matches database user parameters
+We have to find user, that has username of $username, and password 
+of $password, so we have to execute mysql command from our php code.
+
+if our username matches username in database,compare passwords afterwards.
+
+5.
+$sql = "SELECT * FROM users WHERE username = ?"; 
+Prepare a SQL statement to select user data based on the username provided.
+
+6.
+$stmt = mysqli_stmt_init($conn); 
+Initialize a MySQLi statement object. conn is argument because we should check which database we need to connect 
+
+7.
+if(!mysqli_stmt_prepare($stmt, $sql))
+check if there was some errors while executing mysql code
+
+8.
+mysqli_stmt_bind_param($stmt, "s", $username);
+when we wrote command $sql, our username was '?', now, we change it to real username
+
+9.
+now, execute statement that we prepared. This sends the SQL query to the MySQL database
+for execution, using the provided username as a parameter.
+mysqli_stmt_execute($stmt);
+
+10.
+$result = mysqli_stmt_get_result($stmt);
+
+11.
+if($row = mysqli_fetch_assoc($result))
+after this command, the result will be an associative
+$row = array(
+    'id' => id that username has,
+    'username' => 'username that was found',
+    'password' => 'some hashed password'
+);
+
+
+
+12.
+check if passwords match
+$passCheck = password_verify($password, $row['password']);
+
+

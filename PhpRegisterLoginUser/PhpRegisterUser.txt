@@ -1,0 +1,61 @@
+1. To Register User, We should check if we clicked on submit button and save username, password, confirmPassword
+if(isset($_POST['submit']))
+$username = $_POST['username'];
+$password = $_POST['password'];
+$confirmPass = $_POST['confirmPassword'];
+
+2. We have to check if the fields are empty or not
+if(empty($username) || empty($password) || empty($confirmPass))
+
+3.We have to check if username has invalid symbols 
+elseif(!preg_match("/^[a-zA-Z0-9]*/",$username))
+
+4.We have to check if password and confirm password matches or not
+elseif($password!==$confirmPass)
+
+5.Now we have to write information in database
+$sql="SELECT username FROM users WHERE username = ?";
+
+6.$stmt = mysqli_stmt_init($conn); 
+Initialize a MySQLi statement object. conn is argument because we should check which database we need to connect 
+
+7.if(!mysqli_stmt_prepare($stmt, $sql))
+check if there was some errors while executing mysql code
+
+8.mysqli_stmt_bind_param($stmt, "s", $username);
+when we wrote command $sql, our username was '?', now, we change it to real username
+
+9.now, execute statement that we prepared. This sends the SQL query to the MySQL database
+for execution, using the provided username as a parameter.
+mysqli_stmt_execute($stmt);
+
+10.now, we have to store the result on the client side
+mysqli_stmt_store_result() is used to buffer the result set on the client side, enabling to work
+with the result set in various ways without needing to re-execute the prepared statement.
+mysqli_stmt_store_result($stmt);
+
+11.check if username already exist or not
+$rowCount=mysqli_stmt_num_rows($stmt);
+if ($rowCount>0)
+
+12. if username is not taken, create new user in table
+$sql="INSERT INTO users (username, password) VALUES (?,?)";
+
+13.$stmt = mysqli_stmt_init($conn); 
+Initialize a MySQLi statement object. conn is argument because we should check which database we need to connect 
+
+14.if(!mysqli_stmt_prepare($stmt, $sql))
+check if there was some errors while executing mysql code
+
+15.hash the password
+$hashedPass = password_hash($password, PASSWORD_DEFAULT);
+
+16.bind username and password to our statement
+mysqli_stmt_bind_param($stmt, "ss",$username,$hashedPass); 
+
+17.execute the sql command
+mysqli_stmt_execute($stmt);
+
+
+
+

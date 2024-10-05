@@ -1,0 +1,57 @@
+
+/* Styles for the registration container */
+.registration-container {
+    max-width: 400px; /* Set max width for the registration form */
+    margin: auto; /* Center the form horizontally */
+    padding: 20px; /* Padding around the container */
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Other styles for registration elements */
+.registration-title {
+    text-align: center; /* Center the title */
+    color: #21374b; /* Dark color for the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.registration-info {
+    text-align: center; /* Center the info text */
+    margin-bottom: 15px; /* Space below the info text */
+}
+
+.registration-link {
+    color: #21374b; /* Dark color for the link */
+    text-decoration: underline; /* Underline for emphasis */
+}
+
+.registration-form {
+    display: flex; /* Flexbox layout for form elements */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.registration-input {
+    padding: 3px; /* Padding inside the input fields */
+    margin-bottom: 15px; /* Space below each input field */
+    border: 1px solid #ccc; /* Light border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    font-size: 1rem; /* Font size for inputs */
+    max-width: 100%; /* Make input fields fill the container width */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.registration-button {
+    padding: 10px; /* Padding for the button */
+    background-color: #21374b; /* Dark background color */
+    color: #fff; /* White text for the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners for button */
+    font-size: 1rem; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.registration-button:hover {
+    background-color: #1a2a3b; /* Darker shade on hover */
+}

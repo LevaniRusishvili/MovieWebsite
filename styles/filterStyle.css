@@ -1,0 +1,103 @@
+.container {
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.filter-container {
+    position: relative; /* Ensures that the filter options are positioned relative to this container */
+    left: 0;
+    margin-bottom: 50px;
+}
+
+.filter-button {
+    background-color: #297379;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.filter-container:hover .filter-options {
+    display: flex; /* Show filter options when hovering over the container */
+}
+
+.filter-options {
+    display: none; /* Hide filter options by default */
+    position: absolute;
+    top: 100%; /* Place below the filter button */
+    left: 0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    flex-direction: column; /* Align children vertically */
+    gap: 10px; /* Space between filter sections */
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.filter-section select,
+.filter-section input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.checkbox-group {
+    display: none; /* Hide checkbox groups initially */
+}
+
+.checkbox-group.hidden {
+    display: none; /* Ensure hidden class hides elements */
+}
+
+.checkbox-group:not(.hidden) {
+    display: flex; /* Display checkbox groups when not hidden */
+    flex-direction: column; /* Align checkboxes vertically */
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checkbox-item label {
+    font-size: 14px;
+}

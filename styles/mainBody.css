@@ -1,0 +1,10 @@
+.main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 100%;
+    gap: 10px;
+   background-color: white;
+
+}

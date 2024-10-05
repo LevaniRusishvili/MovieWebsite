@@ -1,0 +1,58 @@
+
+
+.footer-container {
+    width: 100%;
+    max-width: 2000px;
+    margin: 0 auto;
+   
+    bottom: 0;
+    display: flex; /* Flexbox layout for better alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center all elements */
+    background-color: #21374b;
+}
+
+.footer-logo h1 {
+    font-size: 2rem; /* Font size for the logo */
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Clean font */
+    color: #f2f2f2; /* Light gray for the logo text */
+}
+
+.footer-links {
+    margin: 15px 0; /* Space between links and logo */
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Space between links */
+    justify-content: center; /* Center the list */
+}
+
+.footer-links li {
+    margin: 0;
+}
+
+.footer-links a {
+    color: #f2f2f2; /* Light gray link color */
+    text-decoration: none; /* No underline for links */
+    font-size: 1rem; /* Font size for readability */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.footer-links a:hover {
+    color: #c2c2c2; /* Slightly darker gray on hover */
+}
+
+.footer-info {
+    font-size: 0.85rem; /* Smaller text for copyright */
+    margin-top: 10px; /* Space above info */
+}
+
+.footer-info p {
+    margin: 5px 0; /* Less margin for closer lines */
+    color: #b3b3b3; /* Gray for footer text */
+}

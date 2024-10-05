@@ -1,0 +1,18 @@
+Array
+(
+    [genre] => Array
+        (
+            [0] => Drama
+        )
+
+    [date] => 
+)
+Array
+(
+    [genre] => Array
+        (
+            [0] => Comedy
+        )
+
+    [date] => 
+)
