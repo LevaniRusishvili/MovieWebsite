@@ -10,6 +10,7 @@ if(isset($_POST['submit'])) {               //tu submits davachiret
         header("Location: ../index.php?error=emptyfields");   //home page  
         exit();   
     } else {
+        //some comment
 //Here, we should check if input parameters matches database users
         $sql = "SELECT * FROM users WHERE username = ?";     //sql statement to select all users from users table, where username matches '?' 
         $stmt = mysqli_stmt_init($conn);    //conn gadaeca argumentad radgan statement objectma unda icodes romeb databases ukavshirdeba
